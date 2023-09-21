@@ -1,1 +1,346 @@
-<h1>Hellow world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map with Markers and Line</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <style>
+        /* Style for the map container */
+        #map {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #AAA;
+        }
+        /* Style for the custom text box */
+        .custom-info {
+            background-color: white;
+            padding: 5px 10px;
+            border: 1px solid #AAA;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+            width: 50%;
+        }
+        .custom-info h4 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .custom-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Map container -->
+<div id="map"></div>
+
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script>
+    // Initialize the map and set its view to Weimar, Germany
+    var map = L.map('map').setView([50.9795, 11.3235], 14);
+
+    // Define a custom control for the text box
+    var InfoControl = L.Control.extend({
+        options: {
+            position: 'topleft'
+        },
+        onAdd: function() {
+            var div = L.DomUtil.create('div', 'custom-info');
+            div.innerHTML = '<h4>George Eliot\'s Trip to Weimar, 1855</h4>' +
+                            '<p>Click on the circles to see which places George Eliot visited during her trip to Weimar, Germany.</p>';
+            return div;
+        }
+    });
+
+    // Add the custom control to the map
+    map.addControl(new InfoControl());
+
+    // Add OpenStreetMap tiles (basic map)
+    var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    });
+
+    // Add CartoDB Positron tiles (monochrome map)
+    var monochromeLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '© CartoDB'
+    });
+
+    // By default, add the basic map to the map
+    osmLayer.addTo(map);
+
+    // Add OpenStreetMap tiles to the map
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    var circleLayerGroup = L.layerGroup().addTo(map);
+    var lineLayerGroup = L.layerGroup().addTo(map);
+
+    // Marker for Weimar station
+    var weimarStation = [50.9795, 11.3235];
+    var weimarPopupText = "It was between three and four o’clock on a fine morning in August, that after a ten hours’ journey from Frankfort, I awoke at the Weimar station. No tipsiness can be more dead to all appeals than that which comes from fitful draughts of sleep on a railway journey by night. To the disgust of your wakeful companions, you are totally insensible to the existence of your umbrella, and to the fact that your carpet-bag is stowed under your seat, or that you have borrowed books and tucked them behind the cushion. »What’s the odds, so long as one can sleep?« is your philosophic formula; and it is not until you have begun to shiver on the platform in the early morning air that you become alive to property and its duties, – that is, to the necessity of keeping a fast grip upon it. Such was my condition when I reached the station at Weimar.<br><br>– from: George Eliot, Three Months in Weimar";
+    L.circleMarker(weimarStation, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(weimarPopupText);
+
+    // Marker for Hotel zum Erbprinzen (you might want to use the exact coordinates)
+    var hotelErbprinzen = [50.9815, 11.3295];
+    var hotelPopupText = "... after a little difficulty we got some tolerable beds at the Erbprinz and slept away our fatigue by 9 o’clock.<br><br>– from George Eliot’s Journal";
+    L.circleMarker(hotelErbprinzen, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(hotelPopupText);
+
+    // Draw a green line connecting the two markers
+    var connectingLine1 = L.polyline([weimarStation, hotelErbprinzen], {color: 'green'}).addTo(lineLayerGroup);
+
+    // Marker for Kaufstraße
+    var kaufstrasse = [50.9835, 11.3335];
+    var kaufstrassePopupText = "Our landlady Frau Münderloh was a Weimarian of the Weimarians  (…) The landlady’s husband was called the »süsser Münderloh« (sweet Münderloh) by way of distinction from a brother of his who was the reverse of sweet. This Münderloh who was not sweet – but who nevertheless dealt in sweets – in other words was a confectioner, was so utter a rogue that any transaction with him was dreaded almost as if he had been the devil himself, and so clever a rogue that he always managed to keep on the windy side of the law.<br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(kaufstrasse, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(kaufstrassePopupText);
+
+    // Draw a purple line connecting the Hotel zum Erbprinzen marker to the Kaufstraße marker
+    var connectingLine2 = L.polyline([hotelErbprinzen, kaufstrasse], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for Goethe Haus (replace with exact coordinates if needed)
+    var goetheHaus = [50.9810, 11.3290];
+    var goethePopupText = "Goethe’s house is much more important looking, but to English eyes far from being the palatial residence which some German writers think it. The entrance hall is certainly very imposing, with its statues in niches and broad stair-case. The latter was made after his own design and was an aftershine of Italian tastes. (…) G. had obtained permission from Frau von Goethe to see the Studier- and Schlafzimmer (study and bedroom) which are not open to the public, and here our feelings were deeply moved. <br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(goetheHaus, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(goethePopupText);
+
+    // Draw a purple line connecting Kaufstraße to the Goethe Haus
+    var connectingLine3 = L.polyline([kaufstrasse, goetheHaus], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for Schiller Haus (replace with exact coordinates if needed)
+    var schillerHaus = [50.9800, 11.3280];
+    var schillerPopupText = "When we passed the Schillerstraße, I used to be very much thrilled by the inscription \"Hier wohnte Schiller\" (Here Schiller lived), over the door of his small house. Very interesting it is to see his study, which is happily left in its original state. <br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(schillerHaus, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(schillerPopupText);
+
+    // Draw a purple line connecting the Goethe Haus to the Schiller Haus
+    var connectingLine4 = L.polyline([goetheHaus, schillerHaus], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for Theatre with Goethe-Schiller-Denkmal (replace with exact coordinates if needed)
+    var theatreDenkmal = [50.9785, 11.3265];
+    var theatrePopupText = "The Stern, a large circular opening among the trees (i.e., in the Park on the Ilm), with walks radiating from it, has been thought of a as a place for the projected statues of Goethe and Schiller. In Rauch’s model for these statues the poets are draped in togas, Goethe, who was considerably the shorter of the two, resting his hand on Schiler’s shoulder; but it has been wisely determined to represent them in their ’habit as they lived’, so Rauch’s design is rejected. <br><br>– from George Eliot, Three Months in Weimar";
+    L.circleMarker(theatreDenkmal, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(theatrePopupText);
+
+    // Draw a purple line connecting the Schiller Haus to the Theatre with Goethe-Schiller-Denkmal
+    var connectingLine5 = L.polyline([schillerHaus, theatreDenkmal], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for The Stadtschloß (replace with exact coordinates if needed)
+    var stadtschloss = [50.9770, 11.3250];
+    var stadtschlossPopupText = "From a walk in the morning (…) we saw that Weimar was more like a market town than the precinct of a court. And this is the ’Athens of the north’, we said. Materially speaking, it is more like Sparta. (…) One’s first feeling is: How could Goethe live here, in this dull, lifeless village? (…) We soon had our impression modified when in the evening we found our way to the Belvedere Chaussée, that splendid avenue of chestnut trees – when we saw the Schloss and discovered the labyrinthine beauties of the Park (…).<br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(stadtschloss, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(stadtschlossPopupText);
+
+    // Draw a purple line connecting the Theatre with Goethe-Schiller-Denkmal to The Stadtschloß
+    var connectingLine6 = L.polyline([theatreDenkmal, stadtschloss], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for The Altenburg (replace with exact coordinates if needed)
+    var altenburg = [50.9755, 11.3230];
+    var altenburgPopupText = "About 1/2 past 10 Liszt called, and after chatting pleasantly for some time invited us to go and breakfast at his house, the Altenburg. (…) On arriving at the Altenburg we were shewn into a garden, where in a saloon formed by overarching trees the déjeuner was set out.<br><br>– from George Eliot’s Journal";
+    L.circleMarker(altenburg, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(altenburgPopupText);
+
+    // Draw a purple line connecting The Stadtschloß to The Altenburg
+    var connectingLine7 = L.polyline([stadtschloss, altenburg], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for The Ilm Park with Goethe’s Garden House (replace with exact coordinates if needed)
+    var ilmPark = [50.9735, 11.3200];
+    var ilmParkPopupText = "Sometimes we took our shady walk in the Stern, the oldest part of the Park plantations, on the opposite side of the river, lingering on our way to watch the crystal brook which hurries on, like a foolish young maiden, to wed itself with the muddy Ilm.<br><br>– from George Eliot, Three Months in Weimar";
+    L.circleMarker(ilmPark, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(ilmParkPopupText);
+
+    // Draw a purple line connecting The Altenburg to The Ilm Park with Goethe’s Garden House
+    var connectingLine8 = L.polyline([altenburg, ilmPark], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for The Belvedere Schloß (replace with exact coordinates if needed)
+    var belvedereSchloss = [50.9710, 11.3170];
+    var belvederePopupText = "A favourite resort of ours, as of all the inhabitants of Weimar, was Belvedere, one of the Duke’s summer residences about 2 miles from Weimar. A chaussée bordered by noble chestnut trees leads to the entrance of the grounds which are open to all the world as much as to the Duke himself.<br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(belvedereSchloss, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(belvederePopupText);
+
+    // Draw a purple line connecting The Ilm Park with Goethe’s Garden House to The Belvedere Schloß
+    var connectingLine9 = L.polyline([ilmPark, belvedereSchloss], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for The Ettersburg (replace with exact coordinates if needed)
+    var ettersburg = [50.9685, 11.3140];
+    var ettersburgPopupText = "About ten days after our arrival we made an excursion to Ettersburg, one of the Duke’s summer residences. ... The morning was one of the brightest and hottest that August ever bestowed ...We talked cheerily as usual, and at last rested from our broiling walk on the borders of a glorious pine wood – a wood so extensive that the trees in the distance form a complete wall with their trunks, and so give one a twilight which is very welcome on a hot summer’s day. The ground under the trees is completely covered with soft moss so that one hears no sound of footsteps. ... At length, after a rest in the wood, we came to the open park in front of the Schloss.<br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(ettersburg, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(ettersburgPopupText);
+
+    // Draw a purple line connecting The Belvedere Schloß to The Ettersburg
+    var connectingLine10 = L.polyline([belvedereSchloss, ettersburg], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for The Tiefurt Schloß (replace with exact coordinates if needed)
+    var tiefurtSchloss = [50.9660, 11.3110];
+    var tiefurtPopupText = "We (…) saw the queer little Schloss, which used to be Amalia’s residence (…). The walls of every room are crowded with engravings, and the tables with rococo wares. There is a suite of rooms which are so small that the largest of them does not take up as much space as a good dining table, and each of these small rooms is crowded with prints, old china, and all sorts of knick-knacks.<br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(tiefurtSchloss, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(tiefurtPopupText);
+
+    // Draw a purple line connecting The Ettersburg to The Tiefurt Schloß
+    var connectingLine11 = L.polyline([ettersburg, tiefurtSchloss], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for Bad Berka (replace with exact coordinates if needed)
+    var badBerka = [50.9635, 11.3080];
+    var badBerkaPopupText = "Another delightful place to which we often walked was Bercka (sic), a little village, with baths and a Kur-Haus seated in a lovely valley about six miles from Weimar. The first time G. went I was obliged to stay at home and work, and when he came back he merely said that the place and the walk to it were pretty, and brought me a bunch of berries from the mountain ash as a proof that he had thought of me by the way. He wished to ménager (prepare) a surprize for me by the moderation of his praise and he succeeded, for I was enchanted with the first sight of this little paradise and half inclined to be angry with G. for having been able to restrain the expression of his admiration. The hanging woods, the soft colouring and graceful lines of the upland, the village roofs and spire all of a reddish violet but which harmonized beautifully with the foliage, the shady walks by the side of a wood-covered hill the little avenue of stately poplars in agreeable contrast with the other trees, the winding stream and the bright green meadows through which it flowed made an enchanting scene.<br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(badBerka, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(badBerkaPopupText);
+
+    // Draw a purple line connecting The Tiefurt Schloß to Bad Berka
+    var connectingLine12 = L.polyline([tiefurtSchloss, badBerka], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for The Kickelhahn Hut (replace with exact coordinates if needed)
+    var kickelhahnHut = [50.9605, 11.3050];
+    var kickelhahnPopupText = "It is now quite empty, but there is an interesting memorial of his presence in these wonderful lines written by his own hand near the window frame:<br><br>Über allen Gipfeln<br>Ist Ruh’,<br>In allen Wipfeln<br>Spürest Du<br>Kaum einen Hauch;<br>Die Vögelein schweigen im Walde.<br>Warte nur! Balde<br>Ruhest du auch.<br><br>Over all the mountain peaks is quiet; in the treetops you trace scarcely a breath; the little birds are silent in the woods. Wait now, soon you will rest also.<br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(kickelhahnHut, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(kickelhahnPopupText);
+
+    // Draw a purple line connecting Bad Berka to The Kickelhahn Hut
+    var connectingLine13 = L.polyline([badBerka, kickelhahnHut], {color: 'purple'}).addTo(lineLayerGroup);
+
+    // Marker for the bahnhof to leave Weimar (replace with exact coordinates if needed)
+    var bahnhofWeimar = [50.9795, 11.3235];  // This is the same coordinate as Weimar station. Update if different.
+    var bahnhofPopupText = "The morning had been sombre and bitterly cold from the beginning, and now it began to rain heavily. The train soon came up – we rushed under an umbrella into our carriage, and so on the 4th of November after a stay of just three months, we turned our backs on Weimar.<br><br>– from George Eliot, Recollections of Weimar";
+    L.circleMarker(bahnhofWeimar, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(bahnhofPopupText);
+
+    // Draw a red line connecting The Kickelhahn Hut to the bahnhof to leave Weimar
+    var connectingLine14 = L.polyline([kickelhahnHut, bahnhofWeimar], {color: 'red'}).addTo(lineLayerGroup);
+
+    // Combined marker for Weimar station and bahnhof to leave Weimar
+    var stationPopupText1 = "It was between three and four o’clock on a fine morning in August, that after a ten hours’ journey from Frankfort, I awoke at the Weimar station. ... [more content] ... when I reached the station at Weimar.<br><br>– from: George Eliot, Three Months in Weimar";
+    var stationPopupText2 = "The morning had been sombre and bitterly cold from the beginning, and now it began to rain heavily. The train soon came up – we rushed under an umbrella into our carriage, and so on the 4th of November after a stay of just three months, we turned our backs on Weimar.<br><br>– from George Eliot, Recollections of Weimar";
+
+    var stationMarker = L.circleMarker(weimarStation, {
+        radius: 15,
+        fillColor: "#888",
+        color: "#888",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.5
+    }).addTo(circleLayerGroup).bindPopup(stationPopupText1);
+
+    stationMarker.on('click', function() {
+        if (this.getPopup().getContent() === stationPopupText1) {
+            this.setPopupContent(stationPopupText2);
+        } else {
+            this.setPopupContent(stationPopupText1);
+        }
+    });
+
+    // Define the base layers for the layer control
+    var baseMaps = {
+        "Basic Map": osmLayer,
+        "Monochrome Map": monochromeLayer
+    };
+
+    var overlayMaps = {
+        "Destinations": circleLayerGroup,
+        "Itinerary": lineLayerGroup
+    };
+
+    // Add the layer control to the map
+    L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+</script>
+
+</body>
+</html>
