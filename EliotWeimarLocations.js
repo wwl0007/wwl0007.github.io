@@ -11,7 +11,7 @@ var EliotWeimarLocations = {
     "Date":"06/12/1849",
     "Location":"Folkestone",
     "Country":"Great Britain",
-    "Info":"Eliot, accompanying Charles and Cara Bray, began her first Continental Tour in Folkestone on the coast near Dover."
+    "Info":"<iframe width="560" height="315" src="https://www.youtube.com/embed/c4j9Z9bwBBU?si=_p33NhnWSYIVT4mB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>"
     }
   },
   {
