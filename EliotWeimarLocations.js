@@ -31,7 +31,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 3.9742,47.8556 ]
+       "coordinates":  [ 11.3335, 50.9835 ]
     },
     "properties": {
     "Date":"06/15/1849",
@@ -44,7 +44,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 4.83565,45.76404 ]
+       "coordinates":  [ 11.3290, 50.9810 ]
     },
     "properties": {
     "Date":"06/1849",
@@ -57,7 +57,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 4.80552,43.94931 ]
+       "coordinates":  [ 11.3280, 50.9800 ]
     },
     "properties": {
     "Date":"06/1849",
@@ -70,7 +70,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 5.36977,43.29648 ]
+       "coordinates":  [ 11.3265, 50.9785 ]
     },
     "properties": {
     "Date":"06/1849",
@@ -83,7 +83,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 7.26195,43.71017 ]
+       "coordinates":  [ 11.3250, 50.9770 ]
     },
     "properties": {
     "Date":"06/1849",
@@ -96,7 +96,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 8.94625,44.40564 ]
+       "coordinates":  [ 11.3230, 50.9755 ]
     },
     "properties": {
     "Date":"06/1849",
@@ -109,7 +109,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 9.19,45.4642 ]
+       "coordinates":  [ 11.3200, 50.9735 ]
     },
     "properties": {
     "Date":"07/1849",
@@ -122,7 +122,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 9.25716,46.01604 ]
+       "coordinates":  [ 11.3170, 50.9710 ]
     },
     "properties": {
     "Date":"07/1849",
@@ -135,7 +135,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 8.65325,45.96762 ]
+       "coordinates":  [ 11.3140, 50.9685 ]
     },
     "properties": {
     "Date":"07/1849",
@@ -148,7 +148,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 7.066667,46.1 ]
+       "coordinates":  [ 11.3110, 50.9660 ]
     },
     "properties": {
     "Date":"07/1849",
@@ -161,7 +161,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 6.8697,45.9231 ]
+       "coordinates":  [ 11.3080, 50.9635 ]
     },
     "properties": {
     "Date":"07/1849",
@@ -174,7 +174,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 6.14315,46.20439 ]
+       "coordinates":  [ 11.3050, 50.9605 ]
     },
     "properties": {
     "Date":"07/1849",
@@ -187,59 +187,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 6.626764,46.507072 ]
-    },
-    "properties": {
-    "Date":"07/1849",
-    "Location":"Ouchy",
-    "Country":"Switzerland",
-    "Info":"Eliot and the Brays spent a week together on the north shore of Lake Geneva (Ouchy and Vevey)"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ 6.85,46.466667 ]
-    },
-    "properties": {
-    "Date":"07/1849",
-    "Location":"Vevey",
-    "Country":"Switzerland",
-    "Info":"Eliot and the Brays spent a week together on the north shore of Lake Geneva (Ouchy and Vevey)"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ 1.85868,50.95129 ]
-    },
-    "properties": {
-    "Date":"03/1850",
-    "Location":"Calais",
-    "Country":"France",
-    "Info":"George Eliot and M. D'Albert Durade crossed the English Channel from Calais on their way to England."
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ 1.3089,51.1295 ]
-    },
-    "properties": {
-    "Date":"03/1850",
-    "Location":"Dover",
-    "Country":"Great Britain",
-    "Info":"The crossing to Dover was rough and made Eliot quite seasick. "
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -1.510556,52.408056 ]
+       "coordinates":  [ 11.3235, 50.9795 ]
     },
     "properties": {
     "Date":"03/25/1850",
