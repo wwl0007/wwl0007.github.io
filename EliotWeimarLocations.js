@@ -1,19 +1,6 @@
 var EliotWeimarLocations = {
    "type": "FeatureCollection",
    "features": [
-    {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -0.12775, 51.50735]
-    },
-    "properties": {
-    "Date":"06/11/1849",
-    "Location":"London",
-    "Country":"Great Britain",
-    "Info":"Charles Bray and Eliot joined Cara in London, leaving the Midlands five days after Eliot's father's funeral for a Continental tour that they had consiered taking together for some time."
-    }
-  },
   {
     "type": "Feature",
     "geometry": {
