@@ -5,7 +5,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 1.166,51.081 ]
+       "coordinates":  [ 50.9795, 11.3235 ]
     },
     "properties": {
     "Date":"06/12/1849",
@@ -18,7 +18,7 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 2.35222,48.85661 ]
+       "coordinates":  [ 50.9815, 11.3295 ]
     },
     "properties": {
     "Date":"06/13/1849",
