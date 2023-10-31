@@ -239,19 +239,6 @@ var EliotWeimarLocations = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -0.12775,51.50735 ]
-    },
-    "properties": {
-    "Date":"03/1850",
-    "Location":"London",
-    "Country":"Great Britain",
-    "Info":"Charles Bray and Eliot joined Cara in London, leaving the Midlands five days after Eliot's father's funeral for a Continental tour that they had consiered taking together for some time.<br>In late March, Eliot arrived in London with M. D'Albert Durade. "
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ -1.510556,52.408056 ]
     },
     "properties": {
