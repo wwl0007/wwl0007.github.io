@@ -51,13 +51,8 @@
     var onEachFeatureWeimar = function(feature, layer) {
       if (feature.properties) {
         var prop = feature.properties;
-        // make a cool little html popup that can include properties from the .js file
         var popup =
-          '<h4><p>George Eliot&#39;s Weimar journey with her friends Charles and Cara Bray was her first visit to the Continent. They visited well-known sites in France, Italy, and Switzerland, and when the Brays returned home in late July, Eliot remains in Geneva for several more months, returning to England in March of 1850. Eliots early journals were destroyed by John Cross, who discusses the trip briefly and quotes from the Geneva letters extensively in Chapter 4 of the <em>Life of George Eliot</em> at <a href="https://georgeeliotarchive.org/files/original/3b28e63752fc4810a36918d080b580f5.pdf" target="_blank"> Vol.1 of <em>Life</em> the Cabinet Edition</a>, pp. 168-201.&nbsp;</p><p><i>Click on the individual cities on this itinerary for more information.</it></p></h4>';
-        // add known info about event to the description
-        //alternatively, you can have a field called description in your json attributes - it will pull it in here on any layer you have an oneachfeature
-        // you must create a layer property on each feature or else
-        // the search results won't know where the item is on the map / layer
+          '<h4><p>George Eliot&#39;s Weimar journey with her friends Charles and Cara Bray was her first visit to the Continent. They visited well-known sites in France, Italy, and Switzerland, and when the Brays returned home in late July, Eliot remains in Geneva for several more months, returning to England in March of 1850. Eliots early journals were destroyed by John Cross, who discusses the trip briefly and quotes from the Geneva letters extensively in Chapter 4 of the <em>Life of George Eliot</em> at <a href="https://georgeeliotarchive.org/files/original/3b28e63752fc4810a36918d080b580f5.pdf" target="_blank"> Vol.1 of <em>Life</em> the Cabinet Edition</a>, pp. 168-201.&nbsp;</p><p><i>Click on the individual Locations on this itinerary for more information.</it></p></h4>';
         feature.layer = layer;
         layer.bindPopup(popup, {
           maxWidth: "300"
@@ -65,8 +60,8 @@
       }
     }; // end onEachFeature 1860
 
-    // all cities visited in one layer:
-    var onEachFeatureCitiesWeimar = function(feature, layer) {
+    // all Locations visited in one layer:
+    var onEachFeatureLocationsWeimar = function(feature, layer) {
       if (feature.properties) {
         var prop = feature.properties;
         //   var popup = '<h3>'+prop['Location']+'</h3><strong>Total Visits: </strong>'+ prop['VisitTotal']+'<br>'+prop['Years']+'<br>'+prop['Info'];
@@ -98,21 +93,11 @@
     }).addTo(map);
 
     var EliotWeimarLocations = L.geoJson(EliotWeimarLocations, {
-      onEachFeature: onEachFeatureCitiesWeimar,
+      onEachFeature: onEachFeatureLocationsWeimar,
       pointToLayer: function(feature, latlng) {
         return L.circleMarker(latlng, EliotCircleMarkers);
       }
     }).addTo(map);
-
-//If I need polygons in here for particular detail spaces, here is the template:
-// L.polygon ([
-  //  [ 43.7779433, 11.2594059 ],
-  //  [ 43.7789155, 11.2601515 ],
-  //  [ 43.7792718, 11.25932  ],
-  //  [ 43.7782919, 11.2585744 ]
-  //  ]).addTo(map).bindPopup('<p>In 1860, Eliot and Lewes visited the <strong>Monastery of San Marco</strong> in Florence for the first time to see the famous frescoes by Fra Angelico on its walls. Eliot commented specifically on the <em>Crucifixion</em> in the Chapter House in her <a href="https://georgeeliotarchive.org/items/show/222">&quot;Recollections of Italy&quot; see p. 186 in Cross&#39;&nbsp;<em>Life</em>, Vol.2</a>. But in 1860 and 1861, she could not see the many frescoes on the upper floor, because women were not permitted beyond the public areas of the monastery. Nonetheless, with the help of notes taken by Lewes, it became a key location in her novel <em>Romola</em>, set in the 1490s. Romola barely notices the work with "a crucified form rising high and pale on the frescoed wall, and pale faces of sorrow looking out from it below." When she returned in 1869, the monastery had become a public museum, which Eliot visited on April 24 and 26, 1869.</p><p>Fra Angelico&#39;s
-// <em>Crucifixion</em>, San Marco Chapter House<a href="https://georgeeliotarchive.org/files/original/7cd2de744d9d0e0b097de21f85250bd9.jpg" target="_blank"><img alt="An Image of Fra Angelico&#39;s Crucifixion in the Chapter House of San Marco" src="https://georgeeliotarchive.org/files/original/7cd2de744d9d0e0b097de21f85250bd9.jpg" style="width: 100%; height: 100%;" /></a></p>'
-// );
 
     var basemaps = {
       "Colorful": imagery,
