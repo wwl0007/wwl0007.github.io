@@ -47,6 +47,18 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    var onEachFeatureWeimar = function(feature, layer) {
+      if (feature.properties) {
+        var prop = feature.properties;
+        var popup =
+          '<h4><p>George Eliot&#39;s Weimar journey with her friends Charles and Cara Bray was her first visit to the Continent. They visited well-known sites in France, Italy, and Switzerland, and when the Brays returned home in late July, Eliot remains in Geneva for several more months, returning to England in March of 1850. Eliots early journals were destroyed by John Cross, who discusses the trip briefly and quotes from the Geneva letters extensively in Chapter 4 of the <em>Life of George Eliot</em> at <a href="https://georgeeliotarchive.org/files/original/3b28e63752fc4810a36918d080b580f5.pdf" target="_blank"> Vol.1 of <em>Life</em> the Cabinet Edition</a>, pp. 168-201.&nbsp;</p><p><i>Click on the individual Locations on this itinerary for more information.</it></p></h4>';
+        feature.layer = layer;
+        layer.bindPopup(popup, {
+          maxWidth: "300"
+        });
+      }
+    };
+
     // all Locations visited in one layer:
     var onEachFeatureLocationsWeimar = function(feature, layer) {
       if (feature.properties) {
