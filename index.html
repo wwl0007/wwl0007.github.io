@@ -66,7 +66,7 @@
         //   var popup = '<h3>'+prop['Location']+'</h3><strong>Total Visits: </strong>'+ prop['VisitTotal']+'<br>'+prop['Years']+'<br>'+prop['Info'];
         feature.layer = layer;
         layer.on('click', function(e) {
-          document.getElementById("info").innerHTML = '<h3>' + prop['Location'] + ' (' + prop['Country'] + ')' +'</h3><strong>Arrival Date: </strong>' + prop['Date'] + '<br>' + prop['Info'];
+          document.getElementById("info").innerHTML = '<h3>' + prop['Location'] +'</h3><strong>Arrival Date: </strong>' + prop['Date'] + '<br>' + prop['Info'];
         })
       }
     };
