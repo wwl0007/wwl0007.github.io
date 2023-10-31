@@ -30,7 +30,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"06/13/1849",
     "Location":"Paris",
-    "Info":"Eliot and the Brays spent two days in Paris. "
+    "Info":"Eliot and the Brays spent two days in Paris. ",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -50,7 +50,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"06/15/1849",
     "Location":"Tonnerre",
-    "Info":"They stopped in this medieval town on the way to Southern France. "
+    "Info":"They stopped in this medieval town on the way to Southern France. ",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -70,7 +70,15 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"06/1849",
     "Location":"Lyon",
-    "Info":"From Lyon, they traveled down the Rhone to Avignon."
+    "Info":"From Lyon, they traveled down the Rhone to Avignon.",
+    "MediaOne": "",
+    "MediaTwo": "",
+    "MediaThree": "",
+    "MediaFour": "",
+    "MediaFive": "",
+    "MediaSix": "",
+    "MediaSeven": "",
+    "MediaEight": "",
     }
   },
   {
@@ -82,7 +90,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"06/1849",
     "Location":"Avignon",
-    "Info":"They spent two days in Avignon."
+    "Info":"They spent two days in Avignon."m
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -102,7 +110,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"06/1849",
     "Location":"Marseilles ",
-    "Info":"They passed through Marseilles to travel east along the coast toward Italy. "
+    "Info":"They passed through Marseilles to travel east along the coast toward Italy. ",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -122,7 +130,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"06/1849",
     "Location":"Nice ",
-    "Info":"From Nice, they traveled via the Corniche (along the French coastline) into Italy."
+    "Info":"From Nice, they traveled via the Corniche (along the French coastline) into Italy.",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -142,7 +150,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"06/1849",
     "Location":"Genoa ",
-    "Info":"They spent a week in Genoa. "
+    "Info":"They spent a week in Genoa. ",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -162,7 +170,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"07/1849",
     "Location":"Milan",
-    "Info":"They passed through on the way to the Northern Italian lakes "
+    "Info":"They passed through on the way to the Northern Italian lakes ",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -182,7 +190,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"07/1849",
     "Location":"Lake Como",
-    "Info":"They spent several days on the Northern Italian lakes. "
+    "Info":"They spent several days on the Northern Italian lakes. ",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -202,7 +210,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"07/1849",
     "Location":"Lake Maggiore ",
-    "Info":"They spent several days on the Northern Italian lakes. "
+    "Info":"They spent several days on the Northern Italian lakes. ",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -222,7 +230,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"07/1849",
     "Location":"Martigny",
-    "Info":"They returned from Italy to Switzerland via Simplon Pass."
+    "Info":"They returned from Italy to Switzerland via Simplon Pass.",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -242,7 +250,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"07/1849",
     "Location":"Chamonix ",
-    "Info":"They continued via the Col de Balme to Chamonix on the North side of the Mont Blanc on horseback, with the ultimate goal of Geneva."
+    "Info":"They continued via the Col de Balme to Chamonix on the North side of the Mont Blanc on horseback, with the ultimate goal of Geneva.",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -262,7 +270,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"07/1849",
     "Location":"Geneva ",
-    "Info":"They arrives in Geneva four days after their departure from Chamonix. After a week on the Northern shore of the lake, they returned here, and the Brays took leave of their friend on July 25 to return home to Coventry. Eliot stayed behind in a pension, Campagne Plongeon, and then moved into lodgings with the painter D'Albert Durade and his wife on October 9. She stayed all winter; on March 18, 1850, she began her return trip to England accompanied by M. D'Albert Durade. "
+    "Info":"They arrives in Geneva four days after their departure from Chamonix. After a week on the Northern shore of the lake, they returned here, and the Brays took leave of their friend on July 25 to return home to Coventry. Eliot stayed behind in a pension, Campagne Plongeon, and then moved into lodgings with the painter D'Albert Durade and his wife on October 9. She stayed all winter; on March 18, 1850, she began her return trip to England accompanied by M. D'Albert Durade. ",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
@@ -282,7 +290,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"03/25/1850",
     "Location":"Rosehill, Coventry",
-    "Info":"Eliot left D'Albert in London for more sightseeing, and joined the Brays in Rosehill, their home on Radford Road near the city center."
+    "Info":"Eliot left D'Albert in London for more sightseeing, and joined the Brays in Rosehill, their home on Radford Road near the city center.",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
