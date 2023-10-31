@@ -18,7 +18,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -38,7 +38,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -58,7 +58,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -90,7 +90,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -110,7 +110,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -130,7 +130,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -150,7 +150,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -170,7 +170,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -190,7 +190,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -210,7 +210,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -230,7 +230,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -250,7 +250,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -270,7 +270,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   },
   {
@@ -290,7 +290,7 @@ var EliotWeimarLocations = {
     "MediaFive": "",
     "MediaSix": "",
     "MediaSeven": "",
-    "MediaEight": ""
+    "MediaEight": "",
     }
   }
 ]
