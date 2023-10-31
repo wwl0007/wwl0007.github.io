@@ -90,7 +90,7 @@ var EliotWeimarLocations = {
     "properties": {
     "Date":"06/1849",
     "Location":"Avignon",
-    "Info":"They spent two days in Avignon."m
+    "Info":"They spent two days in Avignon.",
     "MediaOne": "",
     "MediaTwo": "",
     "MediaThree": "",
